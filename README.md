@@ -4,6 +4,8 @@ Estudante de tecnologia na PUC Minas. Gosto de construir aplicações sólidas e
 
 Tech Stack:
 
- - Linguagens: Java, C#, JavaScript
+[![Minhas Habilidades](https://skillicons.dev/icons?i=cs,dotnet,java,js)](https://skillicons.dev)
+
+ - Linguagens: C#, .NET, Java, JavaScript
 
  - Foco Atual: Desenvolvimento de sistemas de rastreamento e automação de processos (Power Apps & Logic).
