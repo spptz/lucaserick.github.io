@@ -74,6 +74,25 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+
+        /*barra de rolagem personalizada*/
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0d0121;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #a855f7; /* Cor da sua marca */
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #c084fc;
+        }
     </style>
 </head>
 <body class="text-slate-300 font-sans antialiased selection:bg-brand selection:text-white">
@@ -432,6 +451,66 @@
             </div>
         </div>
     </section>
+
+    <!-- Projetos -->
+
+    <section id="projetos" class="py-24 bg-dark-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Meus <span class="text-brand">Projetos</span></h2>
+            <div class="w-20 h-1 bg-brand mx-auto rounded-full"></div>
+        </div>
+
+        <div class="flex overflow-x-auto gap-6 pb-8 custom-scrollbar" data-aos="fade-left">
+            
+            <a href="link-do-seu-projeto.html" class="flex-shrink-0 w-[300px] md:w-[450px] group">
+                <div class="bg-dark-800 border border-slate-700 p-8 rounded-2xl hover:border-brand transition-all duration-500 h-full relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 group-hover:text-brand transition-all">
+                        <i class="fas fa-external-link-alt text-2xl"></i>
+                    </div>
+                    <span class="text-brand font-bold text-xs uppercase tracking-widest">Sotreq S/A</span>
+                    <h3 class="text-2xl font-bold text-white mt-2 mb-4">LabPath</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Aplicativo desenvolvido em Power Apps para rastreamento de amostras de óleo, reduzindo o tempo de entrega em 30% e otimizando o fluxo de trabalho industrial.
+                    </p>
+                    <div class="flex gap-3">
+                        <span class="text-[10px] bg-dark-900 text-slate-300 px-2 py-1 rounded border border-slate-700">Power Apps</span>
+                        <span class="text-[10px] bg-dark-900 text-slate-300 px-2 py-1 rounded border border-slate-700">Data Management</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="flex-shrink-0 w-[300px] md:w-[450px] group">
+                <div class="bg-dark-800 border border-slate-700 p-8 rounded-2xl hover:border-brand transition-all duration-500 h-full relative overflow-hidden">
+                    <span class="text-brand font-bold text-xs uppercase tracking-widest">Estudo de Caso</span>
+                    <h3 class="text-2xl font-bold text-white mt-2 mb-4">API de Gestão Logística</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Desenvolvimento de uma API robusta utilizando C# e .NET Core para controle de inventário e integração com bancos de dados SQL Server.
+                    </p>
+                    <div class="flex gap-3">
+                        <span class="text-[10px] bg-dark-900 text-slate-300 px-2 py-1 rounded border border-slate-700">C#</span>
+                        <span class="text-[10px] bg-dark-900 text-slate-300 px-2 py-1 rounded border border-slate-700">.NET Core</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="flex-shrink-0 w-[300px] md:w-[450px] group">
+                <div class="bg-dark-800 border border-slate-700 p-8 rounded-2xl hover:border-brand transition-all duration-500 h-full relative overflow-hidden">
+                    <span class="text-brand font-bold text-xs uppercase tracking-widest">PUC Minas</span>
+                    <h3 class="text-2xl font-bold text-white mt-2 mb-4">Dashboard de Performance</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Análise de dados complexos e criação de visualizações interativas em Power BI para suporte à tomada de decisão estratégica.
+                    </p>
+                    <div class="flex gap-3">
+                        <span class="text-[10px] bg-dark-900 text-slate-300 px-2 py-1 rounded border border-slate-700">Power BI</span>
+                        <span class="text-[10px] bg-dark-900 text-slate-300 px-2 py-1 rounded border border-slate-700">SQL</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
 
     <!-- Contacto -->
     <section id="contacto" class="py-24 bg-dark-800/80 relative overflow-hidden">
