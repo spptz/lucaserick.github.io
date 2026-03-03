@@ -246,7 +246,7 @@
                 <div class="w-20 h-1 bg-brand mx-auto rounded-full"></div>
             </div>
 
-            <div class="relative border-l-2 border-slate-700 ml-3 md:ml-0 md:pl-0 pl-6 space-y-12">
+           <div class="relative ml-3 md:ml-0 md:pl-0 pl-6 space-y-12">
                 
                 <!-- Experiência 1 -->
                 <div class="relative md:w-1/2 md:ml-auto md:pl-10" data-aos="fade-up">
@@ -317,8 +317,9 @@
                 </div>
 
                 <!-- Educ 3 -->
-                 <div class="bg-dark-900 border border-slate-700 p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start hover:-translate-y-2 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-16 h-16 rounded-full bg-brand/10 text-brand flex items-center justify-center text-3xl flex-shrink-0">
+                  <div class="md:col-span-2 flex justify-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="bg-dark-900 border border-slate-700 p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start hover:-translate-y-2 transition-transform duration-300 max-w-2xl w-full">
+                     <div class="w-16 h-16 rounded-full bg-brand/10 text-brand flex items-center justify-center text-3xl flex-shrink-0">
                         <i class="fas fa-language"></i>
                     </div>
                     <div>
@@ -326,14 +327,14 @@
                         <h3 class="text-2xl font-bold text-white mb-2">Inglês Nativo</h3>
                         <p class="text-lg text-slate-300 mb-3">Orlando, Estados Unidos</p>
                         <ul class="text-slate-400 space-y-2 text-sm">
-                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span></span>Wizard: 2009 - 2015</li>
-                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span></span>TFLA: 2015 - 2020</li>
-                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span></span> Vivência e imersão cultural ao longo dos anos que garantiu fluência no idioma.</li>
-                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span></span> Sempre buscando aprender de forma autônoma, que levou a uma ampla compreensão do idioma em um ambiente global.</li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i>Wizard: 2009 - 2015</li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i>TFLA: 2015 - 2020</li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i>Vivência e imersão cultural ao longo dos anos que garantiu fluência no idioma.</li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i>Sempre buscando aprender de forma autônoma, que levou a uma ampla compreensão do idioma em um ambiente global.</li>
                         </ul>
                     </div>
                 </div>
-
+            </div>
             </div>
         </div>
     </section>
@@ -507,10 +508,10 @@
             const nav = document.getElementById('navbar');
             if (window.scrollY > 20) {
                 nav.classList.add('shadow-lg');
-                nav.style.background = 'rgba(15, 23, 42, 0.95)';
+                nav.style.background = 'rgba(2, 0, 5, 0.85)';
             } else {
                 nav.classList.remove('shadow-lg');
-                nav.style.background = 'rgba(15, 23, 42, 0.8)';
+                nav.style.background = 'rgba(2, 0, 5, 0.85)';
             }
         });
 
@@ -581,6 +582,3 @@
 </body>
 
 </html>
-
-
-
