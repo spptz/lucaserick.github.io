@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Erick | Portfólio</title>
+    <link rel="icon" type="image/png" href="codigo.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                         brand: {
+                            light: '#c084fc',
+                            DEFAULT: '#a855f7', // Roxo principal
+                            dark: '#7e22ce',
+                        },
+                        dark: {
+                            950: '#020005', // Preto profundo
+                            900: '#0d0121', // Roxo muito escuro
+                            800: '#12022b', // Background de cards
+                            700: '#1a0b2e', // Bordas
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Efeitos de fundo dinâmicos e customizações */
+        body {
+            background: linear-gradient(180deg, #020005 0%, #0d0121 50%, #12022b 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .glass-nav {
+            background: rgba(2, 0, 5, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-dot {
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
+        }
+
+        /* Efeito de digitação (Typing effect) */
+        .typing-container {
+            display: inline-block;
+        }
+        .typing-text::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: #a855f7;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="text-slate-300 font-sans antialiased selection:bg-brand selection:text-white">
+
+     <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                          <a href="#" class="flex items-center text-2xl font-bold text-white tracking-tighter">
+                       <img src="foto portfolio.jpeg" alt="Lucas Erick" class="h-12 w-12 rounded-full object-cover with-10 mr-2 border-2 border-brand shadow-lg shadow-brand/30"> 
+                       Lucas <span class="text-brand">Erick</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#sobre" class="hover:text-brand transition-colors px-3 py-2 text-sm font-medium">Sobre mim</a>
+                        <a href="#experiencia" class="hover:text-brand transition-colors px-3 py-2 text-sm font-medium">Experiência</a>
+                        <a href="#educacao" class="hover:text-brand transition-colors px-3 py-2 text-sm font-medium">Educação</a>
+                        <a href="#competencias" class="hover:text-brand transition-colors px-3 py-2 text-sm font-medium">Competências</a>
+                        <a href="#projetos" class="hover:text-brand transition-colors px-3 py-2 text-sm font-medium">Projetos</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#contacto" class="bg-brand hover:bg-brand-light text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-brand/30">
+                        Contato
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-t border-slate-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#sobre" class="mobile-link block hover:bg-dark-700 hover:text-brand px-3 py-2 rounded-md text-base font-medium">Sobre mim</a>
+                <a href="#experiencia" class="mobile-link block hover:bg-dark-700 hover:text-brand px-3 py-2 rounded-md text-base font-medium">Experiência</a>
+                <a href="#educacao" class="mobile-link block hover:bg-dark-700 hover:text-brand px-3 py-2 rounded-md text-base font-medium">Educação</a>
+                <a href="#competencias" class="mobile-link block hover:bg-dark-700 hover:text-brand px-3 py-2 rounded-md text-base font-medium">Competências</a>
+                <a href="#projetos" class="mobile-link block hover:bg-dark-700 hover:text-brand px-3 py-2 rounded-md text-base font-medium">Projetos</a>
+            </div>
+        </div>
+    </nav>
