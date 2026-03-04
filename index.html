@@ -135,6 +135,32 @@
                 }
             }
         }
+
+        .projects-fade {
+            --fade-size: 56px;
+            -webkit-mask-image: linear-gradient(
+                to right,
+                transparent 0,
+                black var(--fade-size),
+                black calc(100% - var(--fade-size)),
+                transparent 100%
+            );
+            mask-image: linear-gradient(
+                to right,
+                transparent 0,
+                black var(--fade-size),
+                black calc(100% - var(--fade-size)),
+                transparent 100%
+            );
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+        }
+
+        @media (max-width: 768px) {
+            .projects-fade {
+                --fade-size: 32px;
+            }
+        }
     </style>
 </head>
 <body class="text-slate-300 font-sans antialiased selection:bg-brand selection:text-white">
@@ -534,7 +560,7 @@
             <div class="w-20 h-1 bg-brand mx-auto rounded-full"></div>
         </div>
 
-        <div class="flex overflow-x-auto gap-6 pb-8 custom-scrollbar" data-aos="fade-left">
+        <div class="flex overflow-x-auto gap-6 pb-8 custom-scrollbar projects-fade" data-aos="fade-left">
 
             <!-- Projeto 1 -->
             
