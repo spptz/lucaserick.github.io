@@ -119,6 +119,15 @@
             animation-delay: 4s;
         }
 
+        @keyframes javaSyncPulse {
+            0%, 100% { opacity: 0.58; }
+            50% { opacity: 1; }
+        }
+
+        .java-sync-pulse {
+            animation: javaSyncPulse 3.6s ease-in-out infinite;
+        }
+
         @media (max-width: 768px) {
             body {
                 background-attachment: scroll;
@@ -256,6 +265,9 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        <div class="absolute left-[-24vw] md:left-[-16vw] bottom-[-8vh] z-0 pointer-events-none leading-none">
+            <i class="fab fa-java text-[56vw] md:text-[41vw] text-brand-light/90 rotate-[14deg] java-sync-pulse drop-shadow-[0_0_36px_rgba(192,132,252,0.55)]"></i>
+        </div>
         <div class="max-w-7xl mx-auto edge-pad relative z-10 w-full text-center md:text-left flex flex-col md:flex-row items-center justify-between">
             
             <div class="w-full md:w-3/5" data-aos="fade-right" data-aos-duration="1000">
@@ -293,7 +305,7 @@
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="w-48 h-48 bg-dark-800 border border-slate-700 rounded-2xl flex items-center justify-center shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden group">
                            <!-- Pode substituir o ícone pela sua foto utilizando uma tag img: <img src="sua-foto.jpg" class="w-full h-full object-cover"> -->
-                           <i class="fab fa-java text-6xl text-brand group-hover:scale-110 transition-transform duration-500"></i>
+                                    <i class="fab fa-java text-6xl text-brand java-sync-pulse group-hover:scale-110 transition-transform duration-500"></i>
                         </div>
                     </div>
                 </div>
