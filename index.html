@@ -104,6 +104,7 @@
         .animate-blob {
             animation: blob 15s infinite alternate ease-in-out;
             will-change: transform; /* Adicione esta linha */
+            transform: translateZ(0);
             -webkit-transform: translateZ(0); /* Adicione esta linha para o Safari mobile */
         }
 
@@ -114,11 +115,31 @@
         .animation-delay-4000 {
             animation-delay: 4s;
         }
+
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            .glass-nav {
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                background: rgba(2, 0, 5, 0.96);
+            }
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            @media (max-width: 768px) {
+                #bg-glows {
+                    display: none;
+                }
+            }
+        }
     </style>
 </head>
 <body class="text-slate-300 font-sans antialiased selection:bg-brand selection:text-white">
 
-    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+    <div id="bg-glows" class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
     <div class="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-brand/20 blur-[120px] animate-blob"></div>
     
     <div class="absolute top-[30%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-cyan-600/15 blur-[120px] animate-blob animation-delay-2000"></div>
