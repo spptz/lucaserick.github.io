@@ -11,4 +11,5 @@ Tech Stack:
  - Foco Atual: Desenvolvimento de sistemas de rastreamento e automação de processos (Power Apps & Logic).
 
 ##Portfólio
+
 https://spptz.github.io/lucaserick.github.io/
