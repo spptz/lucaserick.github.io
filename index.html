@@ -103,6 +103,8 @@
 
         .animate-blob {
             animation: blob 15s infinite alternate ease-in-out;
+            will-change: transform; /* Adicione esta linha */
+            -webkit-transform: translateZ(0); /* Adicione esta linha para o Safari mobile */
         }
 
         .animation-delay-2000 {
