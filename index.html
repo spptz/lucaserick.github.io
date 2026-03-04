@@ -161,6 +161,36 @@
                 --fade-size: 32px;
             }
         }
+
+        .hero-title {
+            font-size: clamp(2.3rem, 6vw, 4.5rem);
+            line-height: 1.05;
+        }
+
+        .typing-row {
+            min-height: 2.75rem;
+        }
+
+        .project-card {
+            width: clamp(18rem, 32vw, 28rem);
+        }
+
+        .edge-pad {
+            padding-left: clamp(1rem, 3.2vw, 2.5rem);
+            padding-right: clamp(1rem, 3.2vw, 2.5rem);
+        }
+
+        .nav-edge {
+            padding-left: max(1rem, env(safe-area-inset-left));
+            padding-right: max(1rem, env(safe-area-inset-right));
+        }
+
+        @media (min-width: 1024px) {
+            .nav-edge {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
     </style>
 </head>
 <body class="text-slate-300 font-sans antialiased selection:bg-brand selection:text-white">
@@ -175,25 +205,25 @@
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+        <div class="w-full nav-edge">
+            <div class="flex items-center justify-between h-20 gap-3">
                 <div class="flex-shrink-0">
-                          <a href="#" class="flex items-center text-2xl font-bold text-white tracking-tighter">
-                       <img src="foto portfolio.jpeg" alt="Lucas Erick" class="h-12 w-12 rounded-full object-cover with-10 mr-2 border-2 border-brand shadow-lg shadow-brand/30"> 
+                          <a href="#" class="flex items-center text-xl lg:text-2xl font-bold text-white tracking-tighter whitespace-nowrap">
+                       <img src="foto portfolio.jpeg" alt="Lucas Erick" class="h-10 w-10 lg:h-12 lg:w-12 rounded-full object-cover with-10 mr-2 border-2 border-brand shadow-lg shadow-brand/30"> 
                        Lucas <span class="text-brand">Erick</span>
                     </a>
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#sobre" class="hover:text-brand transition-colors px-3 py-2 text-sm font-medium">Sobre mim</a>
-                        <a href="#experiencia" class="hover:text-brand transition-colors px-3 py-2 text-sm font-medium">Experiência</a>
-                        <a href="#educacao" class="hover:text-brand transition-colors px-3 py-2 text-sm font-medium">Educação</a>
-                        <a href="#competencias" class="hover:text-brand transition-colors px-3 py-2 text-sm font-medium">Competências</a>
-                        <a href="#projetos" class="hover:text-brand transition-colors px-3 py-2 text-sm font-medium">Projetos</a>
+                <div class="hidden md:flex flex-1 min-w-0 justify-center">
+                    <div class="ml-2 lg:ml-8 flex items-baseline gap-1 lg:gap-3 xl:gap-5 whitespace-nowrap">
+                        <a href="#sobre" class="hover:text-brand transition-colors px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium">Sobre mim</a>
+                        <a href="#experiencia" class="hover:text-brand transition-colors px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium">Experiência</a>
+                        <a href="#educacao" class="hover:text-brand transition-colors px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium">Educação</a>
+                        <a href="#competencias" class="hover:text-brand transition-colors px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium">Competências</a>
+                        <a href="#projetos" class="hover:text-brand transition-colors px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium">Projetos</a>
                     </div>
                 </div>
-                <div class="hidden md:block">
-                    <a href="#contacto" class="bg-brand hover:bg-brand-light text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-brand/30">
+                <div class="hidden md:block flex-shrink-0">
+                    <a href="#contacto" class="bg-brand hover:bg-brand-light text-white px-3 lg:px-5 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold transition-all shadow-lg shadow-brand/30 whitespace-nowrap">
                         Contato
                     </a>
                 </div>
@@ -205,7 +235,7 @@
                 </div>
             </div>
         </div>
-        
+                
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-t border-slate-700">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -221,16 +251,16 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center md:text-left flex flex-col md:flex-row items-center justify-between">
+        <div class="max-w-7xl mx-auto edge-pad relative z-10 w-full text-center md:text-left flex flex-col md:flex-row items-center justify-between">
             
             <div class="w-full md:w-3/5" data-aos="fade-right" data-aos-duration="1000">
                 <p class="text-brand font-medium tracking-wide mb-3 uppercase text-sm">Olá, eu sou</p>
-                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-tight isolate">
+                <h1 class="hero-title font-bold mb-4 tracking-tight isolate">
                     <span class="text-white inline-block">Lucas</span> 
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-cyan-300 inline-block">Erick</span>
                 </h1>
                 
-                <div class="text-xl md:text-2xl text-slate-400 mb-8 h-8 typing-container font-light">
+                <div class="typing-row text-xl md:text-2xl text-slate-400 mb-8 typing-container font-light">
                     <span id="typing-text" class="typing-text"></span>
                 </div>
                 
@@ -276,7 +306,7 @@
 
     <!-- Sobre Mim -->
     <section id="sobre" class="py-24 bg-dark-800/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto edge-pad">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Sobre <span class="text-brand">Mim</span></h2>
             <div class="w-20 h-1 bg-brand mx-auto rounded-full"></div>
@@ -351,7 +381,7 @@
 
     <!-- Experiência Profissional -->
     <section id="experiencia" class="py-24">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto edge-pad">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Experiência <span class="text-brand">Profissional</span></h2>
                 <div class="w-20 h-1 bg-brand mx-auto rounded-full"></div>
@@ -394,7 +424,7 @@
 
     <!-- Educação -->
     <section id="educacao" class="py-24 bg-dark-800/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto edge-pad">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Trajetória <span class="text-brand">Acadêmica</span></h2>
                 <div class="w-20 h-1 bg-brand mx-auto rounded-full"></div>
@@ -452,7 +482,7 @@
 
     <!-- Competências -->
     <section id="competencias" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto edge-pad">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Minhas <span class="text-brand">Competências</span></h2>
                 <div class="w-20 h-1 bg-brand mx-auto rounded-full mb-8"></div>
@@ -554,7 +584,7 @@
     <!-- Projetos -->
 
     <section id="projetos" class="py-24 bg-dark-900/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto edge-pad">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Meus <span class="text-brand">Projetos</span></h2>
             <div class="w-20 h-1 bg-brand mx-auto rounded-full"></div>
@@ -564,7 +594,7 @@
 
             <!-- Projeto 1 -->
             
-            <a href="https://github.com/spptz/Grand-Prix-Pitstop-Manager" class="flex-shrink-0 w-[300px] md:w-[450px] group">
+            <a href="https://github.com/spptz/Grand-Prix-Pitstop-Manager" class="project-card flex-shrink-0 group">
                 <div class="bg-dark-800 border border-slate-700 p-8 rounded-2xl hover:border-brand transition-all duration-500 h-full relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 group-hover:text-brand transition-all">
                         <i class="fas fa-external-link-alt text-2xl"></i>
@@ -583,7 +613,7 @@
 
             <!-- Projeto 2 -->
 
-            <a href="link-do-seu-projeto.html" class="flex-shrink-0 w-[300px] md:w-[450px] group">
+            <a href="link-do-seu-projeto.html" class="project-card flex-shrink-0 group">
                 <div class="bg-dark-800 border border-slate-700 p-8 rounded-2xl hover:border-brand transition-all duration-500 h-full relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 group-hover:text-brand transition-all">
                         <i class="fas fa-external-link-alt text-2xl"></i>
@@ -602,7 +632,7 @@
 
             <!-- Projeto 3 -->
 
-            <a href="link-do-seu-projeto.html" class="flex-shrink-0 w-[300px] md:w-[450px] group">
+            <a href="link-do-seu-projeto.html" class="project-card flex-shrink-0 group">
                 <div class="bg-dark-800 border border-slate-700 p-8 rounded-2xl hover:border-brand transition-all duration-500 h-full relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 group-hover:text-brand transition-all">
                         <i class="fas fa-external-link-alt text-2xl"></i>
@@ -629,7 +659,7 @@
         <div class="absolute top-0 right-0 w-96 h-96 bg-brand/5 rounded-full blur-3xl -z-10"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-600/5 rounded-full blur-3xl -z-10"></div>
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto edge-pad text-center">
             <h2 class="text-4xl font-bold text-white mb-6" data-aos="fade-up">Vamos <span class="text-brand">Conversar?</span></h2>
             <p class="text-slate-400 text-lg mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                 Atualmente aberto a novas oportunidades, conexões e discussões sobre tecnologia, desenvolvimento de software e inovação. Sinta-se à vontade para entrar em contato!
@@ -656,7 +686,7 @@
 
     <!-- Footer -->
     <footer class="bg-dark-900 py-10 border-t border-slate-800 text-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+        <div class="max-w-7xl mx-auto edge-pad flex flex-col items-center">
             <a href="#" class="text-2xl font-bold text-white tracking-tighter mb-6">
                 Lucas <span class="text-brand">Erick</span>
             </a>
