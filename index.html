@@ -93,9 +93,36 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #c084fc;
         }
+        /* Animação dos Glows Dinâmicos */
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+
+        .animate-blob {
+            animation: blob 15s infinite alternate ease-in-out;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        } 
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
     </style>
 </head>
 <body class="text-slate-300 font-sans antialiased selection:bg-brand selection:text-white">
+
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-brand/20 blur-[120px] animate-blob"></div>
+    
+    <div class="absolute top-[30%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-cyan-600/15 blur-[120px] animate-blob animation-delay-2000"></div>
+    
+    <div class="absolute bottom-[-20%] left-[20%] w-[50vw] h-[50vw] rounded-full bg-brand-dark/20 blur-[150px] animate-blob animation-delay-4000"></div>
+</div>
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
@@ -158,7 +185,7 @@
                 </div>
                 
                 <p class="text-slate-400 mb-10 max-w-2xl mx-auto md:mx-0 text-lg leading-relaxed">
-                   Estudante de Engenharia de Software na <b>PUC Minas</b>. Desenvolvedor focado em soluções robustas com <b>C#, Java e .NET</b>, unindo tecnologia à eficiência de processos.
+                   Estudante de Engenharia de Software na <b>PUC Minas</b>. Desenvolvedor focado em soluções robustas com <b>C#</b>, <b>Java</b> e <b>.NET</b>, unindo tecnologia à eficiência de processos.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -199,63 +226,78 @@
 
     <!-- Sobre Mim -->
     <section id="sobre" class="py-24 bg-dark-800/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Sobre <span class="text-brand">Mim</span></h2>
-                <div class="w-20 h-1 bg-brand mx-auto rounded-full"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Sobre <span class="text-brand">Mim</span></h2>
+            <div class="w-20 h-1 bg-brand mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            
+            <div class="flex justify-center" data-aos="fade-right">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand to-indigo-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    
+                    <div class="relative w-64 h-80 bg-dark-900 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
+                        <img src="lucasfoto.jpeg" alt="Lucas Erick" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <div class="absolute bottom-4 left-4 right-4 bg-dark-950/80 backdrop-blur-md border border-white/10 p-2 rounded-xl">
+                            <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center">Software Engineering Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                <div class="bg-dark-900 border border-slate-700 p-8 rounded-2xl relative overflow-hidden h-full">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand/10 rounded-bl-full -z-10"></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Perfil Profissional</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">
+                        Estudante de <strong class="text-white">Engenharia de Software</strong> na <strong class="text-white">PUC Minas</strong>. Sou um desenvolvedor focado em criar soluções robustas com <strong class="text-brand">C#</strong>, <strong class="text-brand">Java</strong> e <strong class="text-brand">.NET</strong>, unindo rigor técnico à eficiência de processos.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        Com vivência nos setores de tecnologia e mineração, possuo sólida base em programação e metodologias ágeis. Busco usar meu conhecimento técnico para impulsionar a inovação, resolver desafios complexos e impactar positivamente as organizações, sempre com foco no aprendizado contínuo.
+                    </p>
+                </div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <div class="bg-dark-900 border border-slate-700 p-8 rounded-2xl relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand/10 rounded-bl-full -z-10"></div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Perfil Profissional</h3>
-                        <p class="text-slate-400 mb-6 leading-relaxed">
-                            Estudante de <strong class="text-white">Engenharia de Software</strong> na <strong class="text-white"><b>PUC Minas</b> </strong>. Desenvolvedor focado em soluções robustas com <strong class="text-brand">C#, Java</strong> e <strong class="text-brand">.NET</strong>, unindo tecnologia à eficiência de processos.
-                        </p>
-                        <p class="text-slate-400 leading-relaxed">
-                            Com experiência nos setores de tecnologia, e mineração, onde desenvolveu competências sólidas em metodologias ágeis, Power Apps e linguagens de programação. Procura constantemente impulsionar a inovação e a eficiência, aplicando meu conhecimento técnico para resolver desafios complexos e contribuir para o sucesso de projetos. É apaixonado pelo aprendizado almejando o crescimento profissional, buscando sempre novas oportunidades para expandir minhas habilidades e impactar positivamente as organizações com as quais colabora.
-                        </p>
+            <div class="space-y-6" data-aos="fade-left">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 text-brand text-xl">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white">Localização</h4>
+                        <p class="text-slate-400">Belo Horizonte, MG</p>
                     </div>
                 </div>
                 
-                <div class="space-y-6" data-aos="fade-left">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 text-brand text-xl">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-white">Localização</h4>
-                            <p class="text-slate-400">Belo Horizonte, MG - Brasil</p>
-                        </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 text-brand text-xl">
+                        <i class="fas fa-globe"></i>
                     </div>
-                    
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 text-brand text-xl">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-white">Vivência Internacional</h4>
-                            <p class="text-slate-400">Flórida - Estados Unidos -Prática de conversação ao dia a dia em Inglês</p>
-                            <p class="text-slate-400">Paris - França - Prática de conversação ao dia a dia em Inglês</p>
-                            <p class="text-slate-400">Barcelona - Espanha - Prática de conversação ao dia a dia em Espanhol</p>
-                            <p class="text-slate-400">Madrid - Espanha - Prática de conversação ao dia a dia em Espanhol</p>
-                        </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white">Vivência Internacional</h4>
+                         <p class="text-slate-400">Flórida - Estados Unidos - Imersão Cultural com práticas de língua inglesa.</p>
+                         <p class="text-slate-400">Barcelona, Madrid - Espanha - Imersão Cultural com práticas de língua espanhola.</p>
+                        <p class="text-slate-400">Francês - França - Imersão Cultural com práticas de língua Inglesa e Francesa.</p>
                     </div>
+                </div>
 
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 text-brand text-xl">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-white">Interesses</h4>
-                            <p class="text-slate-400">Desenvolvimento FullStack, Inteligência Artificial, Inovação Tecnológica, e Análise de Dados.</p>
-                        </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 text-brand text-xl">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white">Interesses</h4>
+                        <p class="text-slate-400">Desenvolvimento FullStack, Inteligência Artificial e Análise de Dados.</p>
                     </div>
                 </div>
             </div>
+            
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Experiência Profissional -->
     <section id="experiencia" class="py-24">
