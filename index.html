@@ -83,6 +83,9 @@
         .custom-scrollbar::-webkit-scrollbar-track {
             background: #0d0121;
             border-radius: 10px;
+            border-left: 32px solid transparent;
+            border-right: 32px solid transparent;
+            background-clip: padding-box;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -137,19 +140,20 @@
         }
 
         .projects-fade {
-            --fade-size: 56px;
+            --fade-left: 14px;
+            --fade-right: 56px;
             -webkit-mask-image: linear-gradient(
                 to right,
                 transparent 0,
-                black var(--fade-size),
-                black calc(100% - var(--fade-size)),
+                black var(--fade-left),
+                black calc(100% - var(--fade-right)),
                 transparent 100%
             );
             mask-image: linear-gradient(
                 to right,
                 transparent 0,
-                black var(--fade-size),
-                black calc(100% - var(--fade-size)),
+                black var(--fade-left),
+                black calc(100% - var(--fade-right)),
                 transparent 100%
             );
             -webkit-mask-repeat: no-repeat;
@@ -158,7 +162,8 @@
 
         @media (max-width: 768px) {
             .projects-fade {
-                --fade-size: 32px;
+                --fade-left: 10px;
+                --fade-right: 32px;
             }
         }
 
