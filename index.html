@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -286,7 +286,7 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#sobre" class="bg-brand hover:bg-brand-light text-white px-8 py-3.5 rounded-full font-semibold transition-all shadow-lg shadow-brand/25 text-center flex items-center justify-center gap-2">
+                    <a id="trajetoria-btn" href="#sobre" class="bg-brand hover:bg-brand-light text-white px-8 py-3.5 rounded-full font-semibold transition-all shadow-lg shadow-brand/25 text-center flex items-center justify-center gap-2">
                         Ver Trajetória <i class="fas fa-arrow-down text-sm"></i>
                     </a>
                     <a href="https://linkedin.com/in/lukkstw" target="_blank" class="bg-dark-800 border border-slate-700 hover:border-brand hover:bg-dark-700 text-white px-8 py-3.5 rounded-full font-semibold transition-all text-center flex items-center justify-center gap-2">
@@ -465,7 +465,6 @@
                         <h3 class="text-2xl font-bold text-white mb-2">Bacharelado em Engenharia de Software</h3>
                         <p class="text-lg text-slate-300 mb-3">PUC Minas</p>
                         <p class="text-slate-400 text-sm leading-relaxed">Desenvolvimento de bases sólidas em programação, arquitetura de sistemas, metodologias de desenvolvimento e engenharia de requisitos.</p>
-                    </ul>
                     </div>
                 </div>
 
@@ -736,7 +735,7 @@
         });
 
         // Centraliza as secoes na viewport ao clicar nos links do cabecalho.
-        const headerLinks = document.querySelectorAll('nav a[href^="#"]');
+        const headerLinks = document.querySelectorAll('nav a[href^="#"], #trajetoria-btn');
 
         function getCenteredScrollY(targetSection) {
             const sectionRect = targetSection.getBoundingClientRect();
