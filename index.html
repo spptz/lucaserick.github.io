@@ -49,6 +49,7 @@
             background: linear-gradient(180deg, #020005 0%, #0d0121 50%, #12022b 100%);
             background-attachment: fixed;
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
         .glass-nav {
@@ -134,10 +135,80 @@
                 background-attachment: scroll;
             }
 
+            section[id] {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+            }
+
+            .edge-pad {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .glass-nav {
+                min-height: 4rem;
+                padding-top: 0.25rem;
+                padding-bottom: 0.25rem;
+            }
+
             .glass-nav {
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
                 background: rgba(2, 0, 5, 0.96);
+            }
+
+            .hero-title {
+                font-size: clamp(2rem, 11vw, 3rem);
+            }
+
+            .typing-row {
+                min-height: 2.25rem;
+                font-size: 1rem;
+            }
+
+            .project-carousel-shell {
+                padding: 0.5rem;
+            }
+
+            .project-track {
+                gap: 1rem;
+            }
+
+            .project-card {
+                width: calc(100vw - 2rem);
+            }
+
+            .projects-fade {
+                --fade-left: 8px;
+                --fade-right: 16px;
+            }
+
+            .max-w-7xl,
+            .max-w-6xl,
+            .max-w-5xl,
+            .max-w-4xl {
+                max-width: 100%;
+            }
+
+            .hero-stack,
+            .mobile-stack {
+                flex-direction: column;
+            }
+
+            .hero-stack > * {
+                width: 100% !important;
+            }
+
+            .mobile-full {
+                width: 100% !important;
+            }
+
+            .mobile-center {
+                text-align: center;
+            }
+
+            .mobile-gap-sm {
+                gap: 0.75rem;
             }
         }
 
@@ -897,7 +968,9 @@
         function getTopScrollY(targetSection) {
             const nav = document.getElementById('navbar');
             const navHeight = nav ? nav.offsetHeight : 0;
-            const topY = targetSection.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+            const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
+            const extraOffset = isMobileViewport ? 96 : 48;
+            const topY = targetSection.getBoundingClientRect().top + window.scrollY - navHeight - extraOffset;
             const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
             return Math.min(maxScrollY, Math.max(0, topY));
         }
@@ -917,14 +990,8 @@
 
                 event.preventDefault();
 
-                const isMobile = window.matchMedia('(max-width: 768px)').matches;
-                const isMobileTrajectoryButton = link.id === 'trajetoria-btn' && isMobile;
-                const isMobileMenuLink = link.classList.contains('mobile-link') && isMobile;
-
                 window.scrollTo({
-                    top: (isMobileTrajectoryButton || isMobileMenuLink)
-                        ? getTopScrollY(targetSection)
-                        : getCenteredScrollY(targetSection),
+                    top: getTopScrollY(targetSection),
                     behavior: 'smooth'
                 });
 
