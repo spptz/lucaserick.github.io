@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas Erick | Portfólio</title>
-    <link rel="icon" type="image/png" href="lucaslogonova.png">
+    <meta name="description" content="Portfólio de Lucas Erick, estudante de Engenharia de Software na PUC Minas. Desenvolvedor focado em C#, Java e .NET.">
+    <meta name="author" content="Lucas Erick">
+    <meta name="theme-color" content="#020005">
+    <link rel="canonical" href="https://spptz.github.io/lucaserick.github.io/">
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <!-- Prévia do link ao compartilhar (LinkedIn, WhatsApp etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://spptz.github.io/lucaserick.github.io/">
+    <meta property="og:title" content="Lucas Erick | Portfólio">
+    <meta property="og:description" content="Estudante de Engenharia de Software na PUC Minas. Desenvolvedor focado em C#, Java e .NET.">
+    <meta property="og:image" content="https://spptz.github.io/lucaserick.github.io/img/foto-perfil.jpg">
+    <meta property="og:image:alt" content="Foto de Lucas Erick">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Lucas Erick | Portfólio">
+    <meta name="twitter:description" content="Estudante de Engenharia de Software na PUC Minas. Desenvolvedor focado em C#, Java e .NET.">
+    <meta name="twitter:image" content="https://spptz.github.io/lucaserick.github.io/img/foto-perfil.jpg">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,262 +60,7 @@
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>
-        /* Efeitos de fundo dinâmicos e customizações */
-        body {
-            background: linear-gradient(180deg, #020005 0%, #0d0121 50%, #12022b 100%);
-            background-attachment: fixed;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        .glass-nav {
-            background: rgba(2, 0, 5, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(2, 0, 5, 0.85);
-        }
-
-        .timeline-dot {
-            box-shadow: 0 0 0 4px rgba(2, 0, 5, 0.85);
-        }
-
-        /* Efeito de digitação (Typing effect) */
-        .typing-container {
-            display: inline-block;
-        }
-        .typing-text::after {
-            content: '|';
-            animation: blink 1s step-end infinite;
-            color: #a855f7;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /*barra de rolagem personalizada*/
-        .custom-scrollbar::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #0d0121;    /* Cor de fundo da barra de rolagem */
-            border-radius: 10px;    /* Arredondamento da barra de rolagem */
-            border-left: 32px solid transparent;    /* Espaço à esquerda da barra de rolagem */
-            border-right: 32px solid transparent;   /* Espaço à direita da barra de rolagem */
-            background-clip: padding-box;   /* Garante que a cor de fundo não se estenda para os espaços transparentes */
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #a855f7; /* Cor da sua marca */
-            border-radius: 10px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #c084fc;
-        }
-        /* Animação dos Glows Dinâmicos */
-        @keyframes blob {
-            0% { transform: translate(0px, 0px) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0px, 0px) scale(1); }
-        }
-
-        .animate-blob {
-            animation: blob 15s infinite alternate ease-in-out;
-            will-change: transform; /* Adicione esta linha */
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0); /* Adicione esta linha para o Safari mobile */
-        }
-
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        } 
-
-        .animation-delay-4000 {
-            animation-delay: 4s;
-        }
-
-        @keyframes javaSyncPulse {
-            0%, 100% { opacity: 0.58; }
-            50% { opacity: 1; }
-        }
-
-        .java-sync-pulse {
-            animation: javaSyncPulse 3.6s ease-in-out infinite;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                background-attachment: scroll;
-            }
-
-            section[id] {
-                padding-top: 4rem !important;
-                padding-bottom: 4rem !important;
-            }
-
-            .edge-pad {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-
-            .glass-nav {
-                min-height: 4rem;
-                padding-top: 0.25rem;
-                padding-bottom: 0.25rem;
-                backdrop-filter: none;
-                -webkit-backdrop-filter: none;
-                background: rgba(2, 0, 5, 0.96);
-            }
-
-            .hero-title {
-                font-size: clamp(2rem, 11vw, 3rem);
-            }
-
-            .typing-row {
-                min-height: 2.25rem;
-                font-size: 1rem;
-            }
-
-            .project-carousel-shell {
-                padding: 0.5rem;
-            }
-
-            .project-track {
-                gap: 1rem;
-            }
-
-            .project-card {
-                width: 100%;
-            }
-
-            .max-w-7xl,
-            .max-w-6xl,
-            .max-w-5xl,
-            .max-w-4xl {
-                max-width: 100%;
-            }
-
-            .hero-stack,
-            .mobile-stack {
-                flex-direction: column;
-            }
-
-            .hero-stack > * {
-                width: 100% !important;
-            }
-
-            .mobile-full {
-                width: 100% !important;
-            }
-
-            .mobile-center {
-                text-align: center;
-            }
-
-            .mobile-gap-sm {
-                gap: 0.75rem;
-            }
-        }
-
-        @supports (-webkit-touch-callout: none) {
-            @media (max-width: 768px) {
-                #bg-glows {
-                    display: none;
-                }
-            }
-        }
-
-        .projects-fade {
-            --fade-left: 14px;
-            --fade-right: 56px;
-            -webkit-mask-image: linear-gradient(
-                to right,
-                transparent 0,
-                black var(--fade-left),
-                black calc(100% - var(--fade-right)),
-                transparent 100%
-            );
-            mask-image: linear-gradient(
-                to right,
-                transparent 0,
-                black var(--fade-left),
-                black calc(100% - var(--fade-right)),
-                transparent 100%
-            );
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-        }
-
-        @media (max-width: 768px) {
-            .projects-fade {
-                --fade-left: 10px;
-                --fade-right: 32px;
-            }
-        }
-
-        .hero-title {
-            font-size: clamp(2.3rem, 6vw, 4.5rem);
-            line-height: 1.05;
-        }
-
-        .typing-row {
-            min-height: 2.75rem;
-        }
-
-        .project-carousel-shell {
-            overflow: hidden;
-        }
-
-        /* Carrossel com scroll nativo: aceita arrastar (touch/trackpad) e para em cada card */
-        .project-track {
-            display: flex;
-            gap: 1.5rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            overscroll-behavior-x: contain;
-            padding-bottom: 0.75rem;
-        }
-
-        .project-card {
-            flex: 0 0 auto;
-            width: clamp(18rem, 32vw, 28rem);
-            scroll-snap-align: start;
-        }
-
-        .edge-pad {
-            padding-left: clamp(1rem, 3.2vw, 2.5rem);
-            padding-right: clamp(1rem, 3.2vw, 2.5rem);
-        }
-
-        .nav-edge {
-            padding-left: max(1rem, env(safe-area-inset-left));
-            padding-right: max(1rem, env(safe-area-inset-right));
-        }
-
-        @media (min-width: 1024px) {
-            .nav-edge {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-        }
-
-        /* Respeita quem pediu menos movimento nas configurações do sistema */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="text-slate-300 font-sans antialiased selection:bg-brand selection:text-white">
 
@@ -316,7 +78,7 @@
             <div class="flex items-center justify-between h-20 gap-3">
                 <div class="flex-shrink-0">
                           <a href="#" class="flex items-center text-xl lg:text-2xl font-bold text-white tracking-tighter whitespace-nowrap">
-                       <img src="avatar.jpg" alt="Lucas Erick" class="h-10 w-10 lg:h-12 lg:w-12 rounded-full object-cover mr-2 border-2 border-brand shadow-lg shadow-brand/30"> 
+                       <img src="img/avatar.jpg" alt="Lucas Erick" class="h-10 w-10 lg:h-12 lg:w-12 rounded-full object-cover mr-2 border-2 border-brand shadow-lg shadow-brand/30"> 
                        Lucas&nbsp;<span class="text-brand">Erick</span>
                     </a>
                 </div>
@@ -397,7 +159,7 @@
                     <div class="absolute inset-8 border border-brand/30 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="w-48 h-48 bg-dark-800 border border-slate-700 rounded-2xl flex items-center justify-center shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden group">
-                           <img src="lucaslogonova.png" alt="Logo Lucas" class="w-28 h-28 object-contain java-sync-pulse group-hover:scale-110 transition-transform duration-500">
+                           <img src="img/logo.png" alt="Logo Lucas" class="w-28 h-28 object-contain java-sync-pulse group-hover:scale-110 transition-transform duration-500">
                         </div>
                     </div>
                 </div>
@@ -422,7 +184,7 @@
                     <div class="absolute -inset-1 bg-gradient-to-r from-brand to-indigo-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                     
                     <div class="relative w-64 h-80 bg-dark-900 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
-                        <img src="foto-perfil.jpg" alt="Lucas Erick" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="img/foto-perfil.jpg" alt="Lucas Erick" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         
                         <div class="absolute bottom-4 left-4 right-4 bg-dark-950/80 backdrop-blur-md border border-white/10 p-2 rounded-xl">
                             <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center">Software Engineering Student</p>
@@ -530,9 +292,9 @@
                         <h3 class="text-xl font-bold text-white mb-1">Estagiário de Desenvolvimento de Software</h3>
                         <h4 class="text-slate-400 text-sm mb-4 font-medium"><i class="fas fa-building mr-2"></i>Strata Engenharia</h4>
                          <ul class="text-slate-400 space-y-2 text-sm">
-                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>TOTVS RM</span></li>
-                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>TypeScript</span></li>
-                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>Gestão de Dados</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>Interface: Reestruturação da interface do TOTVS RM utilizado pela empresa.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>Desenvolvimento: Programação de funções em TypeScript.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>Gestão de Dados: Gerenciamento dos dados do TOTVS RM com MySQL.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -545,9 +307,9 @@
                         <h3 class="text-xl font-bold text-white mb-1">Estagiário de TI</h3>
                         <h4 class="text-slate-400 text-sm mb-4 font-medium"><i class="fas fa-building mr-2"></i>Usiminas</h4>
                          <ul class="text-slate-400 space-y-2 text-sm">
-                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>Automação de Processos</span></li>
-                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>Python</span></li>
-                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>Gestão de Dados</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>Automação de Processos: Automação de rotinas da área de Recursos Humanos.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>Desenvolvimento em Python: Criação de scripts para executar essas automações.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand mt-1 mr-2 text-xs"></i><span>Análise de Dados: Análise dos dados do setor de RH.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -755,7 +517,7 @@
                         <a href="https://github.com/spptz/personal-finance-tracker" target="_blank" class="project-card group p-1 sm:p-2">
                             <article class="bg-dark-800 border border-slate-700 rounded-2xl overflow-hidden hover:border-brand transition-all duration-500 h-full">
                                 <div class="relative h-52 overflow-hidden">
-                                    <img src="Personal Finance Management.png" alt="Preview do projeto Controle Financeiro Full-Stack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" style="object-position: center 10%;">
+                                    <img src="img/projeto-financeiro.webp" alt="Preview do projeto Controle Financeiro Full-Stack" width="1000" height="559" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" style="object-position: center 10%;">
                                     <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/30 to-transparent"></div>
                                     <span class="absolute top-4 left-4 text-[11px] font-bold tracking-wider uppercase bg-black/40 backdrop-blur-sm border border-white/20 text-white px-3 py-1 rounded-full">Full Stack</span>
                                 </div>
@@ -778,7 +540,7 @@
                         <a href="https://github.com/spptz/Grand-Prix-Pitstop-Manager" target="_blank" class="project-card group p-1 sm:p-2">
                             <article class="bg-dark-800 border border-slate-700 rounded-2xl overflow-hidden hover:border-brand transition-all duration-500 h-full">
                                 <div class="relative h-52 overflow-hidden">
-                                    <img src="PitStop Manager.png" alt="Preview do projeto Grand Prix PitStop Manager" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 bg-slate-900" style="object-position: center 65%;">
+                                    <img src="img/projeto-pitstop.webp" alt="Preview do projeto Grand Prix PitStop Manager" width="1000" height="545" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 bg-slate-900" style="object-position: center 65%;">
                                     <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent"></div>
                                     <span class="absolute top-4 left-4 text-[11px] font-bold tracking-wider uppercase bg-black/40 backdrop-blur-sm border border-white/20 text-white px-3 py-1 rounded-full">Desktop System</span>
                                 </div>
@@ -800,7 +562,7 @@
                         <a href="https://github.com/spptz/ReservasJa" target="_blank" class="project-card group p-1 sm:p-2">
                             <article class="bg-dark-800 border border-slate-700 rounded-2xl overflow-hidden hover:border-brand transition-all duration-500 h-full">
                                 <div class="relative h-52 overflow-hidden">
-                                    <img src="ReservasJa.png" alt="Preview do projeto ReservasJa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 bg-slate-900" style="object-position: center 65%;">
+                                    <img src="img/projeto-reservasja.webp" alt="Preview do projeto ReservasJa" width="1000" height="563" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 bg-slate-900" style="object-position: center 65%;">
                                     <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent"></div>
                                     <span class="absolute top-4 left-4 text-[11px] font-bold tracking-wider uppercase bg-black/40 backdrop-blur-sm border border-white/20 text-white px-3 py-1 rounded-full">Web App</span>
                                 </div>
@@ -890,186 +652,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
-
-        // Inicializar animações (AOS)
-        AOS.init({
-            once: true,
-            offset: 100,
-            duration: 800,
-            easing: 'ease-out-cubic',
-            disable: prefersReducedMotion,
-        });
-
-        // Sombra na navbar ao dar scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('shadow-lg', window.scrollY > 20);
-        }, { passive: true });
-
-        // Menu Mobile (Toggle)
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        function setMobileMenuOpen(isOpen) {
-            menu.classList.toggle('hidden', !isOpen);
-            btn.setAttribute('aria-expanded', String(isOpen));
-            btn.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
-        }
-
-        btn.addEventListener('click', () => {
-            setMobileMenuOpen(menu.classList.contains('hidden'));
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                setMobileMenuOpen(false);
-            });
-        });
-
-        // Carrossel de projetos (scroll nativo; as setas avançam um card por vez)
-        const projectTrack = document.getElementById('project-track');
-        const projectCards = Array.from(document.querySelectorAll('.project-card'));
-        const projectPrev = document.getElementById('project-prev');
-        const projectNext = document.getElementById('project-next');
-
-        function getProjectStep() {
-            if (!projectTrack || projectCards.length === 0) {
-                return 0;
-            }
-
-            const firstCard = projectCards[0];
-            const cardWidth = firstCard.getBoundingClientRect().width;
-            const gap = parseFloat(getComputedStyle(projectTrack).columnGap || getComputedStyle(projectTrack).gap || '0');
-            return cardWidth + gap;
-        }
-
-        function updateProjectButtons() {
-            if (!projectTrack || !projectPrev || !projectNext) {
-                return;
-            }
-
-            const maxScrollLeft = projectTrack.scrollWidth - projectTrack.clientWidth;
-            projectPrev.disabled = projectTrack.scrollLeft <= 1;
-            projectNext.disabled = projectTrack.scrollLeft >= maxScrollLeft - 1;
-        }
-
-        if (projectTrack && projectPrev && projectNext) {
-            projectPrev.addEventListener('click', () => {
-                projectTrack.scrollBy({ left: -getProjectStep(), behavior: scrollBehavior });
-            });
-
-            projectNext.addEventListener('click', () => {
-                projectTrack.scrollBy({ left: getProjectStep(), behavior: scrollBehavior });
-            });
-
-            projectTrack.addEventListener('scroll', updateProjectButtons, { passive: true });
-            window.addEventListener('resize', updateProjectButtons);
-        }
-
-        updateProjectButtons();
-
-        // Centraliza as secoes na viewport ao clicar nos links do cabecalho.
-        const headerLinks = document.querySelectorAll('nav a[href^="#"], #trajetoria-btn');
-
-        function getCenteredScrollY(targetSection) {
-            const sectionRect = targetSection.getBoundingClientRect();
-            const elementCenter = sectionRect.top + window.scrollY + (sectionRect.height / 2);
-            const viewportCenter = window.innerHeight / 2;
-            const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
-            const desiredY = elementCenter - viewportCenter;
-            return Math.min(maxScrollY, Math.max(0, desiredY));
-        }
-
-        function getTopScrollY(targetSection) {
-            const nav = document.getElementById('navbar');
-            const navHeight = nav ? nav.offsetHeight : 0;
-            const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
-            const extraOffset = isMobileViewport ? 96 : 48;
-            const topY = targetSection.getBoundingClientRect().top + window.scrollY - navHeight - extraOffset;
-            const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
-            return Math.min(maxScrollY, Math.max(0, topY));
-        }
-
-        headerLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                const hash = link.getAttribute('href');
-
-                if (!hash || hash.length <= 1) {
-                    return;
-                }
-
-                const targetSection = document.querySelector(hash);
-                if (!targetSection) {
-                    return;
-                }
-
-                event.preventDefault();
-
-                window.scrollTo({
-                    top: getTopScrollY(targetSection),
-                    behavior: scrollBehavior
-                });
-
-                history.replaceState(null, '', hash);
-            });
-        });
-
-        // Máquina de escrever (Typing Effect)
-        const texts = [
-            "Engenharia de Software", 
-            "Desenvolvimento FullStack",  
-            "Análise de Dados"
-        ];
-        let count = 0;
-        let index = 0;
-        let currentText = "";
-        let letter = "";
-        let isDeleting = false;
-        const typingElement = document.getElementById('typing-text');
-
-        function type() {
-            if (count === texts.length) {
-                count = 0;
-            }
-            currentText = texts[count];
-
-            if (isDeleting) {
-                letter = currentText.slice(0, --index);
-            } else {
-                letter = currentText.slice(0, ++index);
-            }
-
-            typingElement.textContent = letter;
-
-            let typeSpeed = 100;
-
-            if (isDeleting) {
-                typeSpeed /= 2;
-            }
-
-            if (!isDeleting && letter.length === currentText.length) {
-                typeSpeed = 2000; // Tempo de pausa com a palavra completa
-                isDeleting = true;
-            } else if (isDeleting && letter.length === 0) {
-                isDeleting = false;
-                count++;
-                typeSpeed = 500; // Tempo antes de começar a próxima palavra
-            }
-
-            setTimeout(type, typeSpeed);
-        }
-
-        // Iniciar efeito de digitação após 1 segundo (texto fixo se o usuário pediu menos movimento)
-        if (prefersReducedMotion) {
-            typingElement.textContent = texts[0];
-        } else {
-            setTimeout(type, 1000);
-        }
-
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

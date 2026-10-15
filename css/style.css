@@ -1,0 +1,254 @@
+/* Efeitos de fundo dinâmicos e customizações */
+body {
+    background: linear-gradient(180deg, #020005 0%, #0d0121 50%, #12022b 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.glass-nav {
+    background: rgba(2, 0, 5, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(2, 0, 5, 0.85);
+}
+
+.timeline-dot {
+    box-shadow: 0 0 0 4px rgba(2, 0, 5, 0.85);
+}
+
+/* Efeito de digitação (Typing effect) */
+.typing-container {
+    display: inline-block;
+}
+.typing-text::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: #a855f7;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/*barra de rolagem personalizada*/
+.custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #0d0121;    /* Cor de fundo da barra de rolagem */
+    border-radius: 10px;    /* Arredondamento da barra de rolagem */
+    border-left: 32px solid transparent;    /* Espaço à esquerda da barra de rolagem */
+    border-right: 32px solid transparent;   /* Espaço à direita da barra de rolagem */
+    background-clip: padding-box;   /* Garante que a cor de fundo não se estenda para os espaços transparentes */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #a855f7; /* Cor da sua marca */
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #c084fc;
+}
+/* Animação dos Glows Dinâmicos */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+    animation: blob 15s infinite alternate ease-in-out;
+    will-change: transform; /* Adicione esta linha */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0); /* Adicione esta linha para o Safari mobile */
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+} 
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+@keyframes javaSyncPulse {
+    0%, 100% { opacity: 0.58; }
+    50% { opacity: 1; }
+}
+
+.java-sync-pulse {
+    animation: javaSyncPulse 3.6s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    section[id] {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+
+    .edge-pad {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .glass-nav {
+        min-height: 4rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(2, 0, 5, 0.96);
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 11vw, 3rem);
+    }
+
+    .typing-row {
+        min-height: 2.25rem;
+        font-size: 1rem;
+    }
+
+    .project-carousel-shell {
+        padding: 0.5rem;
+    }
+
+    .project-track {
+        gap: 1rem;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    .max-w-7xl,
+    .max-w-6xl,
+    .max-w-5xl,
+    .max-w-4xl {
+        max-width: 100%;
+    }
+
+    .hero-stack,
+    .mobile-stack {
+        flex-direction: column;
+    }
+
+    .hero-stack > * {
+        width: 100% !important;
+    }
+
+    .mobile-full {
+        width: 100% !important;
+    }
+
+    .mobile-center {
+        text-align: center;
+    }
+
+    .mobile-gap-sm {
+        gap: 0.75rem;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 768px) {
+        #bg-glows {
+            display: none;
+        }
+    }
+}
+
+.projects-fade {
+    --fade-left: 14px;
+    --fade-right: 56px;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        black var(--fade-left),
+        black calc(100% - var(--fade-right)),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        black var(--fade-left),
+        black calc(100% - var(--fade-right)),
+        transparent 100%
+    );
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .projects-fade {
+        --fade-left: 10px;
+        --fade-right: 32px;
+    }
+}
+
+.hero-title {
+    font-size: clamp(2.3rem, 6vw, 4.5rem);
+    line-height: 1.05;
+}
+
+.typing-row {
+    min-height: 2.75rem;
+}
+
+.project-carousel-shell {
+    overflow: hidden;
+}
+
+/* Carrossel com scroll nativo: aceita arrastar (touch/trackpad) e para em cada card */
+.project-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    padding-bottom: 0.75rem;
+}
+
+.project-card {
+    flex: 0 0 auto;
+    width: clamp(18rem, 32vw, 28rem);
+    scroll-snap-align: start;
+}
+
+.edge-pad {
+    padding-left: clamp(1rem, 3.2vw, 2.5rem);
+    padding-right: clamp(1rem, 3.2vw, 2.5rem);
+}
+
+.nav-edge {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+@media (min-width: 1024px) {
+    .nav-edge {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Respeita quem pediu menos movimento nas configurações do sistema */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
