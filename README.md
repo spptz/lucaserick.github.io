@@ -8,7 +8,7 @@ Tech Stack:
 
  - Linguagens: C#, .NET, Java, JavaScript
 
- - Foco Atual: Desenvolvimento de sistemas de rastreamento e automação de processos (Power Apps & Logic).
+ - Foco Atual: Desenvolvimento de Scripts de Automação de processos.
 
 ## Portfólio
 
